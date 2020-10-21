@@ -30,7 +30,7 @@ locations:
 # --------- Optional Parameters -------
 uploads:
   Resume: "C:\\Source\\LinkedIn-Easy-Apply-Bot\\Adam.Yaccarino.Resume.pdf"
-#  Cover Letter: # PATH TO cover letter
+  Cover Letter: "C:\\Source\\LinkedIn-Easy-Apply-Bot\\Adam.Yaccarino.Cover.letter.pdf"
 #  Photo: # PATH TO photo
 
 output_filename:
