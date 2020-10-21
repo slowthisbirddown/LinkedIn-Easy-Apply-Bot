@@ -1,0 +1,45 @@
+username: hupo1989@gmail.com
+password: bearpants224
+
+positions:
+  - Data Scientist
+  - Information Technology Specialist
+  - Information Technology Support Specialist
+  - Information Technology Field Engineer
+  - Automation Engineer
+  - IT Delivery Specialist
+  - Technical Support Specialist
+  - Python Developer
+  - IT Help Desk
+  - Support Engineer
+  - Quality Assurance
+  - QA
+
+locations:
+  - Highlands Ranch, Colorado
+  - Parker, Colorado
+  - Castle Rock, Colorado
+  - Franktown, Colorado
+  - Lone Tree, Colorado
+  - Lakewood, Colorado
+  - Boulder, Colorado
+  - Thornton, Colorado
+  - Broomfield, Colorado
+  - Denver, Colorado
+
+# --------- Optional Parameters -------
+uploads:
+  Resume: "C:\\Source\\LinkedIn-Easy-Apply-Bot\\Adam.Yaccarino.Resume.pdf"
+#  Cover Letter: # PATH TO cover letter
+#  Photo: # PATH TO photo
+
+output_filename:
+  - "C:\\Source\\LinkedIn-Easy-Apply-Bot\\output.csv"
+# blacklist:
+# - # Company names you want to ignore
+
+keyword_blacklist:
+  - Senior
+  - Ruby
+  - Sr
+  - Sr.
