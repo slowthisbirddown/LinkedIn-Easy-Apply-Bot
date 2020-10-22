@@ -1,4 +1,4 @@
-import time, random, os, csv, platform
+import time, random, os, csv, platform, traceback
 import logging
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -83,6 +83,7 @@ class EasyApplyBot:
 			return jobIDs
 		except Exception as e:
 			log.info(str(e) + "   jobIDs could not be loaded from CSV {}".format(filename))
+			traceback.print_exc()
 			return None
 
 
