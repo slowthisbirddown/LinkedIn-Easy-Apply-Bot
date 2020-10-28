@@ -4,3 +4,5 @@
 /logs
 venv/
 debug.log
+config.yaml
+output.csv
