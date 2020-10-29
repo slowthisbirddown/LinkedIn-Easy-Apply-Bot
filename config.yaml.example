@@ -23,6 +23,6 @@ locations:
 # blacklist:
 # - # Company names you want to ignore
 
-#Blacklist keywords from search. EX: "Ruby" "Senior" "Sr"
+# Blacklist keywords from search. EX: "Ruby" "Senior" "Sr"
 # - #
-#keyword_blacklist:
+# keyword_blacklist:
