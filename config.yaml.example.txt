@@ -25,4 +25,4 @@ locations:
 
 #Blacklist keywords from search. EX: "Ruby" "Senior" "Sr"
 # - #
-keyword_blacklist:
+#keyword_blacklist:
