@@ -49,7 +49,8 @@ class EasyApplyBot:
 				 password,
 				 uploads={},
 				 filename='output.csv',
-				 blacklist=[]):
+				 blacklist=[],
+				 keyword_blacklist=[]):
 
 		log.info("Welcome to Easy Apply Bot")
 		dirpath = os.getcwd()
@@ -63,6 +64,7 @@ class EasyApplyBot:
 		self.browser = driver
 		self.wait = WebDriverWait(self.browser, 30)
 		self.blacklist = blacklist
+		self.keyword_blacklist = keyword_blacklist
 		self.start_linkedin(username, password)
 
 
@@ -126,10 +128,18 @@ class EasyApplyBot:
 			location = locations[random.randint(0, len(locations) - 1)]
 			combo = (position, location)
 			if combo not in combos:
-				combos.append(combo)
-				log.info(f"Applying to {position}: {location}")
-				location = "&location=" + location
-				self.applications_loop(position, location)
+				_position = position.split(" ")
+				to_apply = True
+				for word in _position:
+					if word in self.keyword_blacklist:
+						log.info(f"Not applying to {position}")
+						to_apply = False
+
+				if to_apply:
+					combos.append(combo)
+					log.info(f"Applying to {position}: {location}")
+					location = "&location=" + location
+					self.applications_loop(position, location)
 			if len(combos) > 50:
 				break
 		self.finish_apply()
@@ -400,6 +410,8 @@ class EasyApplyBot:
 
 if __name__ == '__main__':
 
+
+
 	with open("config.yaml", 'r') as stream:
 		try:
 			parameters = yaml.safe_load(stream)
@@ -422,6 +434,7 @@ if __name__ == '__main__':
 	output_filename = [f for f in parameters.get('output_filename', ['output.csv']) if f != None]
 	output_filename = output_filename[0] if len(output_filename) > 0 else 'output.csv'
 	blacklist = parameters.get('blacklist', [])
+	keyword_blacklist = parameters.get('keyword_blacklist', [])
 	uploads = parameters.get('uploads', {})
 	for key in uploads.keys():
 		assert uploads[key] != None
@@ -430,7 +443,8 @@ if __name__ == '__main__':
 						parameters['password'],
 						uploads=uploads,
 						filename=output_filename,
-						blacklist=blacklist
+						blacklist=blacklist,
+						keyword_blacklist=keyword_blacklist
 						)
 
 	locations = [l for l in parameters['locations'] if l != None]
