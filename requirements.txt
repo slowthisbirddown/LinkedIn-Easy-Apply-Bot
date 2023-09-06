@@ -22,7 +22,7 @@ python3-xlib==0.15
 PyTweening==1.0.3
 pytz==2020.1
 PyYAML==5.4
-requests==2.23.0
+requests==2.31.0
 selenium==3.141.0
 six==1.15.0
 soupsieve==2.0.1
